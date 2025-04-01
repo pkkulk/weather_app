@@ -9,9 +9,8 @@ const App = () => {
 
   const fetchWeather = async () => {
     try {
-      setError(null); 
-const response = await axios.get(`<span class="math-inline">\{import\.meta\.env\.VITE\_API\_URL\}/weather?city\=</span>{city}`);
-      setWeather(response.data);
+      setError(null); const response = await axios.get(`${import.meta.env.VITE_API_URL}/weather?city=${city}`);     
+       setWeather(response.data);
     } catch (err) {
       setError("City not found or server error");
       setWeather(null);
